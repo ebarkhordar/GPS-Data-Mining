@@ -2,7 +2,7 @@ import csv
 import pyfpgrowth
 
 if __name__ == '__main__':
-    with open('taxi_data.csv') as csv_file:
+    with open('taxi_data.data_utils') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         transactions = []
