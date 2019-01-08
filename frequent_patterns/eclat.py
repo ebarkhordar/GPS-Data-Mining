@@ -16,5 +16,4 @@ def do_eclat(min_support):
     end_time = datetime.now()
     print(rules)
     diff = (end_time - start_time)
-    print("eclat longs : ",diff.total_seconds(), "seconds")
-
+    print("eclat longs : ", diff.total_seconds(), "seconds")
