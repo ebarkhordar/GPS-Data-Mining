@@ -17,7 +17,6 @@ import re
 #     print(m)
 from sklearn.datasets import load_iris
 from sklearn.cluster import DBSCAN
-import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 
 #
@@ -43,6 +42,7 @@ from sklearn.decomposition import PCA
 print(__doc__)
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 from sklearn.cluster import DBSCAN
 from sklearn import metrics
@@ -82,7 +82,6 @@ print("Silhouette Coefficient: %0.3f"
 
 # #############################################################################
 # Plot result
-import matplotlib.pyplot as plt
 
 # Black removed and is used for noise instead.
 unique_labels = set(labels)
