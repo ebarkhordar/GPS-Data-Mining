@@ -12,6 +12,8 @@ Basic usage of the module is very simple:
 from collections import defaultdict, namedtuple
 from datetime import datetime
 
+from data_utils.data import return_data_rows
+
 __author__ = 'Eric Naeseth <eric@naeseth.com>'
 __copyright__ = 'Copyright © 2009 Eric Naeseth'
 __license__ = 'MIT License'
@@ -328,12 +330,14 @@ class FPNode(object):
 
 def do_fp_growth(min_support):
     transactions = []
-    with open('data.text', 'r') as fh:
-        for line in fh:
-            numbers_list = line.split(" ")
-            numbers_list.remove('\n')
-            numbers_tuple = tuple(numbers_list)
-            transactions.append(numbers_tuple)
+    result = return_data_rows()
+    for row in result:
+        one_trip_locations = []
+        for location in row.polyline:
+            x = str(location.lat)[:8] + "," + str(location.long)[:8]
+            one_trip_locations.append(x)
+        numbers_tuple = tuple(one_trip_locations)
+        transactions.append(numbers_tuple)
     min_support = min_support * len(transactions)
     start_time = datetime.now()
     itemset = find_frequent_itemsets(transactions, minimum_support=min_support)

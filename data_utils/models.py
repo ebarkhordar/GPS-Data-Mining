@@ -6,7 +6,7 @@ class TaxiData:
         self.origin_call = origin_call
         self.origin_stand = origin_stand
         self.taxi_id = taxi_id
-        self.timestamp = timestamp
+        self.timestamp = float(timestamp)
         self.day_type = day_type
         self.missing_data = missing_data
         self.polyline = polyline

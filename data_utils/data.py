@@ -1,12 +1,13 @@
 import csv
+import os
 import re
-
 from data_utils.models import TaxiData, Location
 from main_config import Config
 
 
 def return_data_rows():
-    csv_file = open(Config.file_path)
+    path = os.path.dirname(os.path.abspath(__file__))
+    csv_file = open(path + Config.file_path)
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     rows = []
