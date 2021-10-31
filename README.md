@@ -1,6 +1,5 @@
 # Data Mining Based on Taxi GPS Data
 
-
 Simple data-mining practice based on Taxi Service Trajectory.
 Here is a set of assignments for a data mining course during a semester.
 
